@@ -8,7 +8,7 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      name: redis-service
+      name: redis
       app: demo-guestbook-app
   template:
     metadata:
