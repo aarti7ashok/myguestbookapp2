@@ -12,14 +12,13 @@ spec:
       app: demo-guestbook-app
   template:
     metadata:
-        name: redis-service
-        labels:
-          name: redis-service
-          app: demo-guestbook-app
-    spec:
-      ports:
-        - port: 6379
-          targetPort: 6379
-      selector:
         name: redis
-        app: demo-guestbook-app
+        labels:
+            name: redis
+            app: demo-guestbook-app
+    spec:
+      containers:
+        - name: redis
+          image: redis
+          ports:
+            - containerPort: 6379
